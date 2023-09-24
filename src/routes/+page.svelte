@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import Minefield from "./minefield.svelte";
+
+  const w = 30;
+  const h = 16;
+
+  $: templateColumns = `repeat(${w}, 1fr)`;
+  $: templateRows = `repeat(${h}, 1fr)`;
+</script>
+
+<Minefield --template-columns={templateColumns} --template-rows={templateRows}/>
