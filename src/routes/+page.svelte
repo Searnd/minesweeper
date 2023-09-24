@@ -4,8 +4,7 @@
   const w = 30;
   const h = 16;
 
-  $: templateColumns = `repeat(${w}, 1fr)`;
-  $: templateRows = `repeat(${h}, 1fr)`;
+  $: templateColumns = `repeat(${w}, 20px)`;
 </script>
 
-<Minefield --template-columns={templateColumns} --template-rows={templateRows}/>
+<Minefield {w} {h} --template-columns={templateColumns}/>
