@@ -15,7 +15,7 @@
   });
 </script>
 
-<div class="minefield">
+<div class="minefield" style="--template-columns-count: {w}">
   {#each tiles as tileRow}
     {#each tileRow as tile}
       <div class="tile"></div>
@@ -24,10 +24,11 @@
 </div>
 
 <style lang="scss">
+  $mine-size: 20px;
   .minefield {
     display: grid;
-    grid-template-columns: var(--template-columns);
-    grid-auto-rows: 20px;
+    grid-template-columns: repeat(var(--template-columns-count), $mine-size);
+    grid-auto-rows: $mine-size;
     gap: 1px;
   }
   
